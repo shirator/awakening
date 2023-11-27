@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { rng } from "../functions/rng";
+import { Link } from "react-router-dom";
 
 export default function Awakening() {
   const chance = 10;
@@ -9,7 +10,7 @@ export default function Awakening() {
   function regrade() {
     const tap = rng();
     const current_chance = chance + attempt * 5;
-    if (current_chance > tap) {
+    if (current_chance >= tap) {
       setSuccess(true);
     }
     setAttempt(attempt + 1);
@@ -68,6 +69,7 @@ export default function Awakening() {
       >
         restart
       </button>
+      <Link to={"/"}>Homepage</Link>
     </div>
   );
 }

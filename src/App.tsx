@@ -1,8 +1,13 @@
 import "./App.css";
-import Awakening from "./assets/components/Awakening";
+import { Link } from "react-router-dom";
 
 function App() {
-  return <Awakening />;
+  return (
+    <div className="flex gap-5 uppercase  text-4xl">
+      <Link to={`awakening`}>Awakening</Link>
+      <Link to={`tempering`}>Tempering</Link>
+    </div>
+  );
 }
 
 export default App;
