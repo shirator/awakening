@@ -16,7 +16,16 @@ export default function Awakening() {
   }
 
   return (
-    <div className="flex flex-col gap-5 items-center border-2 rounded-md p-10 min-h-8">
+    <div
+      className={`${
+        success ? "border-green-500" : attempt > 0 ? "border-red-500" : "border"
+      } flex flex-col gap-5 items-center border-2 rounded-md p-10 min-h-8`}
+    >
+      <p className="text-xl">
+        {success
+          ? "Ferocious Black Dragon Wing-Reaper"
+          : "Wrathful Black Dragon Wing-Reaper"}
+      </p>
       <div className="relative w-fit">
         <img
           src="https://aacalc.ru/db/img/items_ico/icon_item_4544.png"
@@ -33,7 +42,7 @@ export default function Awakening() {
         <p>Success rate: {chance}%</p>
         <p>Bonus success rate: {attempt * 5}%</p>
         <p>Attempts: {attempt}</p>
-        <p className={`text-${success ? "green" : "red"}-500`}>
+        <p className={`${success ? "text-green-500" : "text-red-500"}`}>
           {attempt > 0
             ? success
               ? "gratz you got t2!"
