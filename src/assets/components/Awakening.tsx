@@ -8,7 +8,7 @@ export default function Awakening() {
 
   function regrade() {
     const tap = rng();
-    const current_chance = chance + (attempt + 1) * 5;
+    const current_chance = chance + attempt * 5;
     if (current_chance > tap) {
       setSuccess(true);
     }
