@@ -51,7 +51,13 @@ const Tempering = () => {
         <p>Total attempts: {attempts}</p>
       </div>
       <div className="flex gap-5">
-        <button onClick={temper} className="w-full uppercase">
+        <button
+          onClick={temper}
+          className={`w-full uppercase ${
+            currentTemper == 30 ? "bg-red-500 cursor-not-allowed" : ""
+          }`}
+          disabled={currentTemper == 30}
+        >
           temper
         </button>
         <button
