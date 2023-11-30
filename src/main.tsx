@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Awakening from "./assets/components/Awakening.tsx";
 import Tempering from "./assets/components/Tempering.tsx";
+import Regrading from "./assets/components/Regrading.tsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/tempering",
     element: <Tempering />,
+  },
+  {
+    path: "/regrading",
+    element: <Regrading />,
   },
 ]);
 
