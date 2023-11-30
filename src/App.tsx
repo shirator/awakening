@@ -16,6 +16,12 @@ function App() {
       >
         Tempering
       </Link>
+      <Link
+        to={`regrading`}
+        className="text-yellow-500 hover:text-green-700 transition duration-300"
+      >
+        Regrading
+      </Link>
     </div>
   );
 }
