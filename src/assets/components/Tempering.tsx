@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { temper_chance } from "../functions/temper_chance";
-import { temper_rng } from "../functions/rng";
+import { temper_rng, rng } from "../functions/rng";
 import { Link } from "react-router-dom";
 
 const Tempering = () => {
@@ -11,10 +11,15 @@ const Tempering = () => {
 
   function temper() {
     const tap = temper_rng();
+    const bonus = rng();
     if (temper_chance[currentTemper - 10] * 2 >= tap) {
       setSuccess(true);
-      setCurrentTemper(currentTemper + 1);
       setAttemptCurrent(0);
+      if (bonus <= 20 && currentTemper < 29) {
+        setCurrentTemper(currentTemper + 2);
+      } else {
+        setCurrentTemper(currentTemper + 1);
+      }
     } else {
       setAttemptCurrent(attemptCurrent + 1);
       setSuccess(false);
