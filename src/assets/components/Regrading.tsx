@@ -26,43 +26,25 @@ const Regrading = () => {
   const [disabled, setDisabled] = useState(false);
   const [attempts, setAttempts] = useState(0);
 
-  const itemMultipliers: {
-    "1.0": number;
-    "1.5": number;
-    "2.0": number;
-    "2.5": number;
-    [key: string]: number;
-  } = {
-    "1.0": 0,
-    "1.5": 0,
-    "2.0": 0,
-    "2.5": 0,
+  const itemMultipliers: { [multiplier: string]: number } = {
+    "1.0": 1.0,
+    "1.5": 1.5,
+    "2.0": 2.0,
+    "2.5": 2.5,
   };
 
   const calculateChance = () => {
-    const baseChances: {
-      Grand: number;
-      Rare: number;
-      Arcane: number;
-      Heroic: number;
-      Unique: number;
-      Celestial: number;
-      Divine: number;
-      Epic: number;
-      Legendary: number;
-      Mythic: number;
-      [key: string]: number;
-    } = {
-      Grand: 0,
-      Rare: 0,
-      Arcane: 0,
-      Heroic: 0,
-      Unique: 0,
-      Celestial: 0,
-      Divine: 0,
-      Epic: 0,
-      Legendary: 0,
-      Mythic: 0,
+    const baseChances: { [grade: string]: number } = {
+      Grand: 50,
+      Rare: 50,
+      Arcane: 50,
+      Heroic: 50,
+      Unique: 50,
+      Celestial: 50,
+      Divine: 50,
+      Epic: 50,
+      Legendary: 10,
+      Mythic: 5,
     };
 
     const baseChance = baseChances[grade] || 0;
