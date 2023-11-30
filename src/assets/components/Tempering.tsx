@@ -37,6 +37,37 @@ const Tempering = () => {
       } flex flex-col gap-5 items-center border-2 rounded-md p-10 min-h-8`}
     >
       <h1>Temper</h1>
+      <div className="flex gap-5 items-center justify-between w-64">
+        <p className="uppercase font-semibold">Starting temper:</p>
+        <select
+          name="starting_temper"
+          value={currentTemper}
+          onChange={(e) => setCurrentTemper(parseInt(e.target.value))}
+          className="p-2"
+        >
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+        </select>
+      </div>
+
       <div className="relative w-fit">
         <img
           src="https://aacalc.ru/db/img/items_ico/icon_item_4544.png"
